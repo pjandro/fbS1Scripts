@@ -1,5 +1,14 @@
 #!/bin/bash
 cat << EOF | chroot /server/tmp /bin/bash
-su - gem
-echo "I'm gen" | sudo tee ~/test
+apt install python3-virtualenv automake libtool libwebp-dev
+virtualenv -p /usr/bin/python3 --system-site-package /home/gem/moonraker-telegram-bot-env/
+/home/gem/moonraker-telegram-bot-env/bin/pip install --upgrade pip
+mkdir -p /home/gem/space
+export TMPDIR=/home/gem/space
+cd /home/gem
+git clone https://github.com/nlef/moonraker-telegram-bot.git
+cat /home/gem/moonraker-telegram-bot/scripts/requirements.txt | grep -v "uvloop" > /home/gem/space/requirements.txt
+/home/gem/moonraker-telegram-bot-env/bin/pip install --no-cache-dir -r /home/gem/space/requirements.txt
+cp /home/gem/moonraker-telegram-bot/scripts/base_install_template /home/gem/printer_data/config/telegram-bot.cfg
+chown gem:gem /home/gem/printer_data/config/telegram-bot.cfg
 EOF
