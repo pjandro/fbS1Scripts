@@ -19,7 +19,7 @@ chown gem:gem /home/gem/printer_data/config/telegram-bot.cfg
 rm -rf ./space/
 wget https://raw.githubusercontent.com/pjandro/fbS1Scripts/refs/heads/main/adds/tgBot.sh
 chmod +x ./tgBot.sh
-cp ./kp.sh kp.sh_back
+mv ./kp.sh kp.sh_back
 wget https://raw.githubusercontent.com/pjandro/fbS1Scripts/refs/heads/main/adds/kp.sh
 chmod +x ./kp.sh
 EOF
