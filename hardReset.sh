@@ -12,7 +12,7 @@ tar -xvf /mnt/overlay.tar --no-same-owner -C /
 # Umount opt to get original opt. Rewrite version to old. For normally work online updating
 umount /opt
 mount -o remount,rw /
-echo "1.0.20" >> /opt/FWVersion
+echo "1.0.20" > /opt/FWVersion
 mount -o remount,ro /
 # Save all changes and reboot printer
 sync
