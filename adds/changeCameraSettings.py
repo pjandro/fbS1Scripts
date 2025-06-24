@@ -15,6 +15,7 @@ while True:
     splitted = line.split(":")[1].split("->")
     key = base64.b64decode(splitted[0]).decode()
     value = base64.b64decode(splitted[1]).decode()
+    print(key, value)
     if key.startswith("namespace_webcams"):
         webcams = True
         newValue = base64.b64encode(b"entries=1").decode()

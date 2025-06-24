@@ -6,9 +6,9 @@ fi
 cat << EOF | chroot /server/tmp /bin/bash
 apt install python3-virtualenv automake libtool libwebp-dev
 cd /home/gem
-wget https://github.com/pjandro/fbS1Scripts/raw/refs/heads/main/bins/tgBot.tar
-tar xfvp tgBot.tar
-rm tgBot.tar
+wget https://github.com/pjandro/fbS1Scripts/raw/refs/heads/main/bins/tgBot.tar.gz
+tar xfvp tgBot.tar.gz
+rm tgBot.tar.gz
 sync
 sleep 2
 cp /home/gem/moonraker-telegram-bot/scripts/base_install_template /home/gem/printer_data/config/telegram-bot.cfg
