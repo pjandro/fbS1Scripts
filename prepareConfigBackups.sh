@@ -8,7 +8,7 @@ cp printer_config.cfg /tmp/backup
 if [ -f ./telegram-bot.cfg ]; then
   cp telegram-bot.cfg /tmp/backup
 fi
-/home/gem/moonraker-env/bin/python3 /home/gem/moonraker/scripts/dbtools.py backup /home/gem/printer_data/database/ /tmp/backup/moonraker.db
+/home/gem/moonraker-env/bin/python3 /home/gem/moonraker/scripts/dbtool.py backup /home/gem/printer_data/database/ /tmp/backup/moonraker.db
 cd /tmp
 tar -cpv ./backup > backup.tar
 if [ -f /home/gem/fluidd/backup.tar ]; then
