@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /home/gem
+rm /home/gem/printer_data/logs/telegram-bot.log
 ./tgBot.sh &
 
 cd /home/gem/klipper
